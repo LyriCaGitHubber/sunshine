@@ -6,11 +6,11 @@ export type HeaderProps = {
   headline: string;
 };
 
-export default function Header({ headline }: HeaderProps): JSX.Element {
+export default function Header(): JSX.Element {
   return (
     <header className={styles.header}>
       <SunIcon />
-      {headline}
+      Sunshine
     </header>
   );
 }

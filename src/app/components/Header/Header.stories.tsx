@@ -6,6 +6,4 @@ export default {
   component: Header,
 };
 
-export const SunshineHeader = (): JSX.Element => (
-  <Header headline="Sunshine"></Header>
-);
+export const SunshineHeader = (): JSX.Element => <Header />;
