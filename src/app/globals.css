@@ -10,6 +10,10 @@
 
 body {
   background-image: url('./assets/sunshine-background.png');
+  background-position: center top;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   font-family: 'PT Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
