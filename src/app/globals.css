@@ -2,10 +2,15 @@
 
 :root {
   /* Sunshine colors */
+
   --clr-yellow: #ffd966;
   --clr-darkblue: #122c3c;
   --clr-text-primary: #fff;
   --clr-text-secondary: #333;
+
+  /* Sunshine font-size font-weight */
+  --font-size-big: 3em;
+  --font-size-content: 2em;
 }
 
 body {
