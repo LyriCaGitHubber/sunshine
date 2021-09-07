@@ -1,0 +1,8 @@
+.header {
+  color: var(--clr-yellow);
+  font-size: var(--font-size-big);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
