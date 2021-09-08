@@ -10,7 +10,7 @@ export const CardLocation = (): JSX.Element => (
   <LocationCard
     place="Aschaffenburg"
     degree={25}
-    icon="icon"
-    description="windig/heiter"
+    icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
+    description="windig"
   />
 );

@@ -17,9 +17,9 @@ export default function LocationCard({
   return (
     <section className={styles.locationCard}>
       <p>{place}</p>
-      <article>
+      <article className={styles.locationCard__info}>
         <p>{degree}°</p>
-        <p>{icon}</p>
+        <img src={icon} />
         <p>{description}</p>
       </article>
     </section>
