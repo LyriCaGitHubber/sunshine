@@ -1,0 +1,9 @@
+.locationCard {
+  margin: 2em;
+  border-radius: 10px;
+  background: linear-gradient(
+    to left,
+    rgba(211, 220, 224, 0.4) 100%,
+    rgba(54, 96, 118, 0.4) 100%
+  );
+}
