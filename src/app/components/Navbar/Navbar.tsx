@@ -5,17 +5,29 @@ import CityIcon from '../../assets/CityIcon';
 import SearchIcon from '../../assets/SearchIcon';
 import styles from './Navbar.module.css';
 
-export default function Navbar(): JSX.Element {
+export type NavbarProps = {
+  LinkActive: 'home' | 'city' | 'search';
+};
+
+export default function Navbar({ LinkActive }: NavbarProps): JSX.Element {
+  const active = {
+    fill: 'var(--clr-yellow)',
+  };
+
+  const inactive = {
+    fill: '#FFF',
+  };
+
   return (
     <nav className={styles.navigation}>
       <Link to="/">
-        <HomeIcon />
+        <HomeIcon {...(LinkActive === 'home' ? active : inactive)} />
       </Link>
       <Link to="/city">
-        <CityIcon />
+        <CityIcon {...(LinkActive === 'city' ? active : inactive)} />
       </Link>
       <Link to="/search">
-        <SearchIcon />
+        <SearchIcon {...(LinkActive === 'search' ? active : inactive)} />
       </Link>
     </nav>
   );
