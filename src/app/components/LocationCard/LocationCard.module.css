@@ -3,12 +3,6 @@
   color: var(--clr-text-secondary);
   border-radius: 10px;
   background: #9dc3e230;
-
-  /*   background: linear-gradient(
-    to right,
-    rgba(54, 96, 118, 0.3),
-    rgba(211, 220, 224, 0.3) 100%
-  ); */
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(5px) saturate(80%);
