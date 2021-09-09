@@ -1,0 +1,9 @@
+.buttonLarge {
+  font-size: var(--font-size-content);
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.2em 0;
+  background: linear-gradient(to left, #122c3c 0%, #326886 70%);
+  border: none;
+}
