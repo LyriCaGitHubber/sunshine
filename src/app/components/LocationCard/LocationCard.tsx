@@ -2,21 +2,21 @@ import React from 'react';
 import styles from './LocationCard.module.css';
 
 export type LocationCardProps = {
-  place: string;
+  locationName: string;
   degree: number;
   icon: string;
   description: string;
 };
 
 export default function LocationCard({
-  place,
+  locationName,
   degree,
   icon,
   description,
 }: LocationCardProps): JSX.Element {
   return (
     <section className={styles.locationCard}>
-      <p>{place}</p>
+      <p>{locationName}</p>
       <article className={styles.locationCard__info}>
         <p>{degree}°</p>
         <img src={icon} />
