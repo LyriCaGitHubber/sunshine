@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function SunIcon(): JSX.Element {
+export default function SunIcon(
+  props: React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       width="42"
@@ -8,6 +10,7 @@ export default function SunIcon(): JSX.Element {
       viewBox="0 0 42 42"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M21 12.25C18.6794 12.25 16.4538 13.1719 14.8128 14.8128C13.1719 16.4538 12.25 18.6794 12.25 21C12.25 23.3206 13.1719 25.5462 14.8128 27.1872C16.4538 28.8281 18.6794 29.75 21 29.75C23.3206 29.75 25.5462 28.8281 27.1872 27.1872C28.8281 25.5462 29.75 23.3206 29.75 21C29.75 18.6794 28.8281 16.4538 27.1872 14.8128C25.5462 13.1719 23.3206 12.25 21 12.25Z"
