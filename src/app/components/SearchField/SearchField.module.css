@@ -1,0 +1,35 @@
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.formInput {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--clr-border);
+  font-size: var(--font-size-content);
+  color: var(--clr-text-secondary);
+  font-weight: bold;
+}
+
+.formInput::placeholder {
+  color: var(--clr-text-secondary);
+}
+
+label {
+  position: relative;
+}
+label::before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  width: 35px;
+  background: url(../../assets/location-icon.svg) center / contain no-repeat;
+}
+
+input {
+  padding: 10px 30px;
+}
