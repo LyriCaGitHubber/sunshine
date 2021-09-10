@@ -1,0 +1,6 @@
+.navigation {
+  background: var(--clr-darkblue-transparent);
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
