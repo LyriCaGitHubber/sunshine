@@ -6,6 +6,9 @@ export default {
   component: Navbar,
   parameters: {
     layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+    },
   },
 };
 
