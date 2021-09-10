@@ -11,9 +11,10 @@
 :root {
   /* Sunshine colors */
 
-  --clr-yellow: #ffd966;
-  --clr-darkblue: #122c3c;
-  --clr-darkblue-transparent: rgba(18, 44, 60, 0.5);
+  --clr-primary: #ffd966;
+  --clr-secondary: #122c3c;
+  --clr-secondary-transparent: rgba(18, 44, 60, 0.4);
+  --clr-icon-inactive: #fff;
   --clr-text-primary: #fff;
   --clr-text-secondary: #333;
 

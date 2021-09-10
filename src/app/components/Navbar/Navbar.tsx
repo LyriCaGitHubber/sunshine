@@ -11,11 +11,11 @@ export type NavbarProps = {
 
 export default function Navbar({ LinkActive }: NavbarProps): JSX.Element {
   const active = {
-    fill: 'var(--clr-yellow)',
+    fill: 'var(--clr-primary)',
   };
 
   const inactive = {
-    fill: '#FFF',
+    fill: 'var(--clr-icon-inactive)',
   };
 
   return (
