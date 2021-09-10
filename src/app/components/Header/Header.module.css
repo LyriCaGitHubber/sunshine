@@ -1,5 +1,5 @@
 .header {
-  color: var(--clr-yellow);
+  color: var(--clr-primary);
   font-size: var(--font-size-big);
   display: flex;
   align-items: center;
