@@ -1,0 +1,16 @@
+.buttonSmall {
+  font-size: var(--font-size-content);
+  background: linear-gradient(to left, #122c3c 0%, #326886 70%);
+  border: none;
+  border-radius: 10px;
+  padding: 0.3em;
+  color: white;
+}
+
+.weather {
+  background: linear-gradient(to left, #122c3c 0%, #326886 70%);
+}
+
+.delete {
+  background: #8e2525;
+}
