@@ -22,9 +22,7 @@ export default function SearchField({
           type="text"
           value={locationSearchValue}
           className={styles.formInput}
-          placeholder={
-            type === 'Search' ? 'Search' : type === 'Add' ? 'Add' : `${type}`
-          }
+          placeholder={type}
           onChange={(event) => {
             event.preventDefault();
             setLocationSearchValue(event.target.value);
