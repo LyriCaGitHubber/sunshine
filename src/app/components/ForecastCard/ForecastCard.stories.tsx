@@ -9,15 +9,15 @@ export default {
 
 const getFormattedDate = () => {
   const today = new Date();
-  let dd: string | number = today.getDate();
-  let mm: string | number = today.getMonth() + 1;
-  const yyyy = today.getFullYear();
-  if (dd < 10) {
-    dd = '0' + dd;
-  } else if (mm < 10) {
-    mm = '0' + mm;
+  let day: string | number = today.getDate();
+  let month: string | number = today.getMonth() + 1;
+  const year = today.getFullYear();
+  if (day < 10) {
+    day = '0' + day;
+  } else if (month < 10) {
+    month = '0' + month;
   }
-  const fullDate = `${dd}.${mm}.${yyyy}`;
+  const fullDate = `${day}.${month}.${year}`;
   return fullDate;
 };
 
