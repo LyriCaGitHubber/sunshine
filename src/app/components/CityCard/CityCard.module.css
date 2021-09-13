@@ -1,0 +1,19 @@
+.cityCard {
+  font-size: 2em;
+  color: var(--clr-text-secondary);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: var(--clr-cards-background);
+  backdrop-filter: blur(5px) saturate(80%);
+  -webkit-backdrop-filter: blur(2px) saturate(80%);
+  padding: 0.3em 0;
+  border-radius: 10px;
+}
+
+.buttonArea {
+  padding: 0.7em 0.5em 0.2em 0.5em;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
