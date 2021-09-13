@@ -17,6 +17,8 @@
   --clr-icon-inactive: #fff;
   --clr-text-primary: #fff;
   --clr-text-secondary: #333;
+  --clr-border: #000;
+  --clr-cards-background: #9dc3e230;
 
   /* Sunshine font-size font-weight */
   --font-size-big: 3em;
