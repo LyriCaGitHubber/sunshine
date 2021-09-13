@@ -7,9 +7,13 @@ export default {
 };
 
 export const SmallButtonWeather = (): JSX.Element => (
-  <ButtonSmall type="weather">Weather</ButtonSmall>
+  <ButtonSmall onclick={() => console.log('it works')} type="weather">
+    Weather
+  </ButtonSmall>
 );
 
 export const SmallButtonDelete = (): JSX.Element => (
-  <ButtonSmall type="delete">Delete</ButtonSmall>
+  <ButtonSmall onclick={() => console.log('it works')} type="delete">
+    Delete
+  </ButtonSmall>
 );
