@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './ButtonSmall.module.css';
 
 type ButtonSmall = {
