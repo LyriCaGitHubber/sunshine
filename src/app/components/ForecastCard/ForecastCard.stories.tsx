@@ -1,4 +1,5 @@
 import React from 'react';
+import getWeekdayString from '../../utils/getWeekday';
 import ForecastCard from './ForecastCard';
 
 export default {
@@ -33,7 +34,7 @@ const getWeekday = () => {
 export const CardMonday = (): JSX.Element => (
   <ForecastCard
     degree={25}
-    day={getWeekday()}
+    day={getWeekdayString('2021-09-23')}
     date={getFormattedDate()}
     icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
     description="sonnig"
