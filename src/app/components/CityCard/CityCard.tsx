@@ -16,8 +16,12 @@ export default function CityCard({
       <p>{locationName}</p>
       <p>{region}</p>
       <div className={styles.buttonArea}>
-        <ButtonSmall type="weather">Weather</ButtonSmall>
-        <ButtonSmall type="delete">Delete</ButtonSmall>
+        <ButtonSmall onclick={() => console.log('sauba sog i')} type="weather">
+          Weather
+        </ButtonSmall>
+        <ButtonSmall onclick={() => console.log('sauba basst a')} type="delete">
+          Delete
+        </ButtonSmall>
       </div>
     </section>
   );
