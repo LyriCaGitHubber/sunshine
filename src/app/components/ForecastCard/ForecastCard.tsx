@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ForecastCard.module.css';
 
 export type ForecastCardProps = {
-  day: string;
+  day: string | null;
   date: string;
   icon: string;
   degree: number;
