@@ -22,13 +22,6 @@ const getFormattedDate = () => {
   return fullDate;
 };
 
-const getWeekday = () => {
-  const date = new Date();
-  const options: any = { weekday: 'long' };
-  const day = date.toLocaleDateString('de-DE', options);
-  return day;
-};
-
 // End Test functions
 
 export const CardMonday = (): JSX.Element => (
