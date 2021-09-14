@@ -15,9 +15,7 @@ export default function ButtonSmall({
   return (
     <button
       onClick={onclick}
-      className={`${styles.buttonSmall} ${
-        type === 'weather' ? styles.weather : styles.delete
-      }`}
+      className={`${styles.buttonSmall} ${styles[type]}`}
     >
       {children}
     </button>
