@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr 1fr 5fr 1fr;
+}
+
+.userInfo {
+  color: white;
+  font-size: var(--font-size-content);
+  text-align: center;
+}
