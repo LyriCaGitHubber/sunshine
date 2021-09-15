@@ -44,8 +44,9 @@ export default function Forecast(): JSX.Element {
         <LocationText locationName="München" />
       </section>
       <div className={styles.forecastCards}>
-        {forecastDays.map((forecastDay) => (
+        {forecastDays.map((forecastDay, key) => (
           <ForecastCard
+            key={key}
             day={forecastDay.day}
             date={forecastDay.date}
             icon={forecastDay.icon}
