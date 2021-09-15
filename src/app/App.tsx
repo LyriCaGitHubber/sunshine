@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
+import Forecast from './pages/Forecast/Forecast';
 
 function App(): JSX.Element {
   return (
@@ -9,6 +10,9 @@ function App(): JSX.Element {
       <Switch>
         <Route path="/search">
           <Search />
+        </Route>
+        <Route path="/forecast">
+          <Forecast />
         </Route>
         <Route path="/">
           <Home />
