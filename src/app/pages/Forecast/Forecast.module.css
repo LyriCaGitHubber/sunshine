@@ -12,16 +12,6 @@
   overflow: scroll;
 }
 
-.locationField {
-  text-align: center;
-  font-size: 2em;
-  color: var(--clr-text-primary);
-  padding-bottom: 0.3em;
-  display: flex;
-  justify-content: center;
-  gap: 0.4em;
-}
-
 .topSection {
   display: grid;
   grid-template-rows: 1fr;
