@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
 import Forecast from './pages/Forecast/Forecast';
 import CityOverview from './pages/CityOverview/CityOverview';
+import AddCity from './pages/AddCity/AddCity';
 
 function App(): JSX.Element {
   return (
@@ -17,6 +18,9 @@ function App(): JSX.Element {
         </Route>
         <Route path="/overview">
           <CityOverview />
+        </Route>
+        <Route path="/city">
+          <AddCity />
         </Route>
         <Route path="/">
           <Home />
