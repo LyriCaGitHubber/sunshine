@@ -5,16 +5,36 @@ import Navbar from '../../components/Navbar/Navbar';
 import styles from './CityOverview.module.css';
 
 export default function CityOverview(): JSX.Element {
+  const cityMockdata = [
+    {
+      locationName: 'Frankfurt',
+      region: 'Hessen',
+    },
+    {
+      locationName: 'München',
+      region: 'Bayern',
+    },
+    {
+      locationName: 'Essen',
+      region: 'Nordrhein-Westfalen',
+    },
+    {
+      locationName: 'Stuttgart',
+      region: 'Baden-Württemberg',
+    },
+  ];
+
   return (
     <div className={styles.container}>
       <Header />
       <div className={styles.cityCards}>
-        <CityCard locationName="Frankfurt" region="Hessen" />
-        <CityCard locationName="Frankfurt" region="Hessen" />
-        <CityCard locationName="Frankfurt" region="Hessen" />
-        <CityCard locationName="Frankfurt" region="Hessen" />
-        <CityCard locationName="Frankfurt" region="Hessen" />
-        <CityCard locationName="Frankfurt" region="Hessen" />
+        {cityMockdata.map((city, key) => (
+          <CityCard
+            key={key}
+            locationName={city.locationName}
+            region={city.region}
+          />
+        ))}
       </div>
       <Navbar LinkActive="city" />
     </div>
