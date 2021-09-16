@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './Home.module.css';
+import getCoords from '../../utils/getCoords';
 import Header from '../../components/Header/Header';
 import LocationCard from '../../components/LocationCard/LocationCard';
 import Navbar from '../../components/Navbar/Navbar';
+
+console.log(await getCoords());
 
 export default function Home(): JSX.Element {
   return (
