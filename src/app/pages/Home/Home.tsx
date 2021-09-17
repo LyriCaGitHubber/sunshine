@@ -14,7 +14,7 @@ export default function Home(): JSX.Element {
         locationName={useRevGeoCoding()}
         degree={25}
         icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
-        description="windig"
+        description="sonnig"
       />
       <Navbar LinkActive="home" />
     </div>
