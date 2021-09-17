@@ -20,6 +20,5 @@ export default function useRevGeoCoding(): string | null {
     `/api/geolocation/?latitude=${location.lat}&longitude=${location.long}`
   );
 
-  console.log(data?.city);
   return data?.city || null;
 }
