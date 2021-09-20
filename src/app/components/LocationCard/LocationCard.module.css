@@ -27,10 +27,6 @@
   font-size: 1.5rem;
 }
 
-.weatherDescription {
-  max-width: min-content;
-}
-
 .infoValues {
   display: flex;
   width: 100%;
