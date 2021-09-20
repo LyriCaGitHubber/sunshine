@@ -56,6 +56,7 @@ app.get('/api/weather', async (request, response) => {
     degree: data.current.temp_c,
     icon: data.current.condition.icon,
     description: data.current.condition.text,
+    wind: data.current.wind_kph,
   };
 
   response.json(weatherData);
