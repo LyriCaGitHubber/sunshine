@@ -11,12 +11,16 @@ export default function Home(): JSX.Element {
     <div className={styles.container}>
       <Header></Header>
       <p className={styles.userInfo}>Your location:</p>
-      <LocationCard
-        locationName={cityIsLoading === true ? 'Wird geladen' : cityName}
-        degree={25}
-        icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
-        description="windig"
-      />
+      {cityIsLoading ? (
+        <p className={styles.loadingText}>Loading...</p>
+      ) : (
+        <LocationCard
+          locationName={cityName}
+          degree={25}
+          icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
+          description="windig"
+        />
+      )}
       <Navbar LinkActive="home" />
     </div>
   );
