@@ -6,6 +6,7 @@ type useWeatherType = {
   degree: string | undefined;
   icon: string | undefined;
   description: string | undefined;
+  wind: number | null | undefined;
 };
 
 export default function useWeather(): useWeatherType {
@@ -20,6 +21,7 @@ export default function useWeather(): useWeatherType {
   }, []);
 
   const { data } = useFetch<{
+    wind: number | null;
     degree: string;
     icon: string;
     description: string;
@@ -27,6 +29,7 @@ export default function useWeather(): useWeatherType {
   const degree = data?.degree;
   const icon = data?.icon;
   const description = data?.description;
+  const wind = data?.wind;
 
-  return { degree, icon, description };
+  return { degree, icon, description, wind };
 }
