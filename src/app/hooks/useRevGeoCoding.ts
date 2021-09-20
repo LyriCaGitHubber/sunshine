@@ -2,7 +2,12 @@ import useFetch from './useFetch';
 import { useEffect, useState } from 'react';
 import getCoords from '../utils/getCoords';
 
-export default function useRevGeoCoding(): string | null {
+type useRevGeoCodingType = {
+  cityName: string | undefined;
+  cityIsLoading: boolean;
+};
+
+export default function useRevGeoCoding(): useRevGeoCodingType {
   const [location, setLocation] = useState<{ lat: number; long: number }>({
     lat: 0,
     long: 0,
@@ -16,9 +21,9 @@ export default function useRevGeoCoding(): string | null {
     run();
   }, []);
 
-  const { data } = useFetch<{ city: string }>(
+  const { data, isLoading: cityIsLoading } = useFetch<{ city: string }>(
     `/api/geolocation/?latitude=${location.lat}&longitude=${location.long}`
   );
-
-  return data?.city || null;
+  const cityName = data?.city;
+  return { cityName, cityIsLoading };
 }
