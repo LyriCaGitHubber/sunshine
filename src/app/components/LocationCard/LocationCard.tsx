@@ -3,9 +3,9 @@ import styles from './LocationCard.module.css';
 
 export type LocationCardProps = {
   locationName: string | undefined;
-  degree: number;
-  icon: string;
-  description: string;
+  degree: string | undefined;
+  icon: string | undefined;
+  description: string | undefined;
 };
 
 export default function LocationCard({
@@ -20,7 +20,7 @@ export default function LocationCard({
       <article className={styles.locationCard__info}>
         <p>{degree}°</p>
         <img src={icon} />
-        <p>{description}</p>
+        <p className={styles.weatherDescription}>{description}</p>
       </article>
     </section>
   );
