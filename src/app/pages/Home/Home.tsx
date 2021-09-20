@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
       <Header></Header>
       <p className={styles.userInfo}>Your location:</p>
       <LocationCard
-        locationName={cityName}
+        locationName={cityName === null ? 'Keinen Ort gefunden' : cityName}
         degree={25}
         icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
         description="windig"
