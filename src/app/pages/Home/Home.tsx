@@ -21,6 +21,7 @@ export default function Home(): JSX.Element {
           locationName={cityName}
           degree={data.degree}
           icon={data.icon}
+          wind={data.wind}
           description={data.description}
         />
       )}
