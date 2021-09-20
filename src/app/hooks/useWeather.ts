@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import getCoords from '../utils/getCoords';
 
 type useWeatherType = {
-  degree: string | undefined;
+  degree: number | undefined;
   icon: string | undefined;
   description: string | undefined;
   wind: number | null | undefined;
@@ -22,7 +22,7 @@ export default function useWeather(): useWeatherType {
 
   const { data } = useFetch<{
     wind: number | null;
-    degree: string;
+    degree: number;
     icon: string;
     description: string;
   }>(`/api/weather/?latitude=${location.lat}&longitude=${location.long}`);

@@ -3,7 +3,7 @@ import styles from './LocationCard.module.css';
 
 export type LocationCardProps = {
   locationName: string | undefined;
-  degree: string | undefined;
+  degree: number | undefined;
   icon: string | undefined;
   wind: number | null | undefined;
   description: string | undefined;
