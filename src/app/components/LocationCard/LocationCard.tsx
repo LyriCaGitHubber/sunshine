@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './LocationCard.module.css';
 
 export type LocationCardProps = {
-  locationName: string;
+  locationName: string | undefined;
   degree: number;
   icon: string;
   description: string;
