@@ -16,7 +16,7 @@ export default function useRevGeoCoding(): useRevGeoCodingType {
   useEffect(() => {
     async function run() {
       const location = await getCoords();
-      setLocation(location);
+      setTimeout(() => setLocation(location), 2000);
     }
     run();
   }, []);

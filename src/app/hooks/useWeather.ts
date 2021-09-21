@@ -13,12 +13,12 @@ export default function useWeather(): useWeatherType {
   const [location, setLocation] = useState<{
     lat?: number | null;
     long?: number | null;
-  } | null>({ lat: 0, long: 0 });
+  } | null>();
 
   useEffect(() => {
     async function run() {
       const location = await getCoords();
-      setLocation(location);
+      setTimeout(() => setLocation(location), 2000);
     }
     run();
   }, []);
