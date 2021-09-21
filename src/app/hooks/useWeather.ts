@@ -10,7 +10,10 @@ type useWeatherType = {
 };
 
 export default function useWeather(): useWeatherType {
-  const [location, setLocation] = useState<{ lat?: number; long?: number }>({});
+  const [location, setLocation] = useState<{
+    lat?: number | null;
+    long?: number | null;
+  } | null>({ lat: 0, long: 0 });
 
   useEffect(() => {
     async function run() {
@@ -21,11 +24,12 @@ export default function useWeather(): useWeatherType {
   }, []);
 
   const { data } = useFetch<{
-    wind: number | null;
+    wind: number;
     degree: number;
     icon: string;
     description: string;
-  }>(`/api/weather/?latitude=${location.lat}&longitude=${location.long}`);
+  }>(`/api/weather/?latitude=${location?.lat}&longitude=${location?.long}`);
+
   const degree = data?.degree;
   const icon = data?.icon;
   const description = data?.description;
