@@ -1,7 +1,20 @@
 import useFetch from './useFetch';
 
-export default function useForecast(city: string) {
-  const { data } = useFetch(`/api/weather/forecast?city=${city}`);
+type ForeCastData = {
+  cityLocation: string;
+  weatherData: [
+    {
+      date: string;
+      description: string;
+      icon: string;
+      maxtemp: number;
+      mintemp: number;
+    }
+  ];
+};
 
+export default function useForecast(city: string): ForeCastData {
+  const { data } = useFetch(`/api/weather/forecast?city=${city}`);
   console.log(data);
+  return data;
 }
