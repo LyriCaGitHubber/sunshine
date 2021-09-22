@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import getCoords from '../utils/getCoords';
 
 type useWeatherType = {
-  degree: number | undefined;
-  icon: string | undefined;
-  description: string | undefined;
-  wind: number | null | undefined;
+  degree: number;
+  icon: string;
+  description: string;
+  wind: number;
 };
 
 export default function useWeather(): useWeatherType {
@@ -20,6 +20,7 @@ export default function useWeather(): useWeatherType {
       const location = await getCoords();
       setTimeout(() => setLocation(location), 2000);
     }
+
     run();
   }, []);
 
@@ -30,10 +31,16 @@ export default function useWeather(): useWeatherType {
     description: string;
   }>(`/api/weather/?latitude=${location?.lat}&longitude=${location?.long}`);
 
-  const degree = data?.degree;
-  const icon = data?.icon;
-  const description = data?.description;
-  const wind = data?.wind;
-
+  if (data) {
+    const degree = data.degree;
+    const icon = data.icon;
+    const description = data.description;
+    const wind = data.wind;
+    return { degree, icon, description, wind };
+  }
+  const degree = 0;
+  const icon = '';
+  const description = '';
+  const wind = 0;
   return { degree, icon, description, wind };
 }
