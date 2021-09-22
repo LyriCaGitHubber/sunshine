@@ -52,7 +52,18 @@ app.get('/api/weather/forecast', async (request, response) => {
     );
 
     const data = await forecast.json();
-    response.json(data);
+    const forecastData = data.forecast.forecastday;
+    const weatherData = forecastData.map((day) => {
+      return {
+        date: day.date,
+        description: day.day.condition.text,
+        icon: day.day.condition.icon,
+        maxtemp: day.day.maxtemp_c,
+        mintemp: day.day.mintemp_c,
+      };
+    });
+
+    response.json(weatherData);
   } catch (error) {
     console.error(error);
     response.status(500).send();
