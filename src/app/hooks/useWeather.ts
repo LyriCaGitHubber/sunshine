@@ -32,11 +32,12 @@ export default function useWeather(): useWeatherType {
   }>(`/api/weather/?latitude=${location?.lat}&longitude=${location?.long}`);
 
   if (data) {
-    const degree = data.degree;
-    const icon = data.icon;
-    const description = data.description;
-    const wind = data.wind;
-    return { degree, icon, description, wind };
+    return {
+      degree: data.degree,
+      icon: data.icon,
+      description: data.description,
+      wind: data.wind,
+    };
   }
   const degree = 0;
   const icon = '';
