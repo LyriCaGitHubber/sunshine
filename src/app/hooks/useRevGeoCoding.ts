@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import getCoords from '../utils/getCoords';
 
 type useRevGeoCodingType = {
-  cityName: string | undefined;
+  cityName: string;
   cityIsLoading: boolean;
 };
 
@@ -24,6 +24,6 @@ export default function useRevGeoCoding(): useRevGeoCodingType {
   const { data, isLoading: cityIsLoading } = useFetch<{ city: string }>(
     `/api/geolocation/?latitude=${location.lat}&longitude=${location.long}`
   );
-  const cityName = data?.city;
+  const cityName = data?.city || '';
   return { cityName, cityIsLoading };
 }
