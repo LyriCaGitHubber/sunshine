@@ -15,6 +15,11 @@ export default function Home(): JSX.Element {
       <Header></Header>
       <p className={styles.userInfo}>Your location:</p>
       {cityIsLoading && <p className={styles.loadingText}>Loading...</p>}
+      {cityName === '' &&
+        data.degree === 0 &&
+        data.icon === '' &&
+        data.wind === 0 &&
+        data.description === '' && <div></div>}
       {cityIsLoading === false &&
         cityName !== '' &&
         data.degree !== 0 &&
@@ -29,7 +34,6 @@ export default function Home(): JSX.Element {
             description={data.description}
           />
         )}
-      )
       <Navbar LinkActive="home" />
     </div>
   );
