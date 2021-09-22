@@ -8,7 +8,7 @@ import styles from './Search.module.css';
 
 export default function Search(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
-  console.log(useForecast(searchValue));
+  const data = useForecast(searchValue);
   const history = useHistory();
   return (
     <div className={styles.container}>
@@ -17,7 +17,10 @@ export default function Search(): JSX.Element {
         type="Search"
         locationSearchValue={searchValue}
         setLocationSearchValue={setSearchValue}
-        handleSubmit={() => history.push('/forecast')}
+        handleSubmit={(event) => {
+          event.preventDefault();
+          history.push('/forecast');
+        }}
       />
       <Navbar LinkActive="search" />
     </div>
