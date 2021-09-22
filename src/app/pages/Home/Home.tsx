@@ -14,17 +14,22 @@ export default function Home(): JSX.Element {
     <div className={styles.container}>
       <Header></Header>
       <p className={styles.userInfo}>Your location:</p>
-      {cityIsLoading && data ? (
-        <p className={styles.loadingText}>Loading...</p>
-      ) : (
-        <LocationCard
-          locationName={cityName}
-          degree={data.degree}
-          icon={data.icon}
-          wind={data.wind}
-          description={data.description}
-        />
-      )}
+      {cityIsLoading && <p className={styles.loadingText}>Loading...</p>}
+      {cityIsLoading === false &&
+        cityName !== '' &&
+        data.degree !== 0 &&
+        data.icon !== '' &&
+        data.wind !== 0 &&
+        data.description !== '' && (
+          <LocationCard
+            locationName={cityName}
+            degree={data.degree}
+            icon={data.icon}
+            wind={data.wind}
+            description={data.description}
+          />
+        )}
+      )
       <Navbar LinkActive="home" />
     </div>
   );
