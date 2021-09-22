@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './LocationCard.module.css';
 
 export type LocationCardProps = {
-  locationName: string | undefined;
-  degree: number | undefined;
-  icon: string | undefined;
-  wind: number | null | undefined;
-  description: string | undefined;
+  locationName: string;
+  degree: number;
+  icon: string;
+  wind: number | null;
+  description: string;
 };
 
 export default function LocationCard({
