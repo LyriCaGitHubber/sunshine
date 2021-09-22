@@ -8,6 +8,7 @@ export default {
 
 export const CardLocation = (): JSX.Element => (
   <LocationCard
+    wind={8}
     locationName="Aschaffenburg"
     degree={25}
     icon="//cdn.weatherapi.com/weather/64x64/day/113.png"

@@ -1,3 +1,5 @@
+### Send Request for city name
+
 GET http://localhost:3001/api/geolocation?latitude=48.135125&longitude=11.581981
 Content-Type: application/json
 Authorization: {{$dotenv MAPQUEST_API_KEY}}
