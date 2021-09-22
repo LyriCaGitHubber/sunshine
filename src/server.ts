@@ -55,15 +55,24 @@ app.get('/api/weather/forecast', async (request, response) => {
     const data = await forecast.json();
     const forecastData = data.forecast.forecastday;
     const cityLocation = data.location.name;
-    const weatherData = forecastData.map((day) => {
-      return {
-        date: day.date,
-        description: day.day.condition.text,
-        icon: day.day.condition.icon,
-        maxtemp: day.day.maxtemp_c,
-        mintemp: day.day.mintemp_c,
-      };
-    });
+    const weatherData = forecastData.map(
+      (day: {
+        date: string;
+        day: {
+          condition: { text: string; icon: string };
+          maxtemp_c: number;
+          mintemp_c: number;
+        };
+      }) => {
+        return {
+          date: day.date,
+          description: day.day.condition.text,
+          icon: day.day.condition.icon,
+          maxtemp: day.day.maxtemp_c,
+          mintemp: day.day.mintemp_c,
+        };
+      }
+    );
 
     response.json({ weatherData, cityLocation });
   } catch (error) {
