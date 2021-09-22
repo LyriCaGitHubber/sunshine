@@ -47,6 +47,7 @@ app.get('/api/weather/forecast', async (request, response) => {
         headers: {
           'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
           'x-rapidapi-key': `${WEATHER_API_KEY}`,
+          'Content-type': 'application/json; charset=utf-8',
         },
       }
     );
