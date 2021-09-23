@@ -15,6 +15,5 @@ type ForeCastData = {
 
 export default function useForecast(city: string): ForeCastData {
   const { data } = useFetch(`/api/weather/forecast?city=${city}`);
-  console.log(data);
   return data;
 }
