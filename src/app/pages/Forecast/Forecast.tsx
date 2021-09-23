@@ -1,59 +1,36 @@
 import React from 'react';
+import useForecast from '../../hooks/useForecast';
+import getWeekdayString from '../../utils/getWeekday';
 import ForecastCard from '../../components/ForecastCard/ForecastCard';
 import Header from '../../components/Header/Header';
 import LocationText from '../../components/LocationText/LocationText';
 import Navbar from '../../components/Navbar/Navbar';
+import useLocationName from '../../hooks/useLocationName';
 import styles from './Forecast.module.css';
 
 export default function Forecast(): JSX.Element {
-  const forecastDays = [
-    {
-      day: 'Montag',
-      date: '23-09-2021',
-      icon: '//cdn.weatherapi.com/weather/64x64/day/113.png',
-      degree: 25,
-      description: 'windig',
-    },
-    {
-      day: 'Dienstag',
-      date: '23-09-2021',
-      icon: '//cdn.weatherapi.com/weather/64x64/day/113.png',
-      degree: 25,
-      description: 'windig',
-    },
-    {
-      day: 'Mittwoch',
-      date: '23-09-2021',
-      icon: '//cdn.weatherapi.com/weather/64x64/day/113.png',
-      degree: 25,
-      description: 'windig',
-    },
-    {
-      day: 'Donnerstag',
-      date: '23-09-2021',
-      icon: '//cdn.weatherapi.com/weather/64x64/day/113.png',
-      degree: 25,
-      description: 'windig',
-    },
-  ];
+  const { cityLocations } = useLocationName();
+  const lastCityLocation = cityLocations[cityLocations.length - 1];
+  const weatherData = useForecast(lastCityLocation);
 
   return (
     <div className={styles.container}>
       <section className={styles.topSection}>
         <Header />
-        <LocationText locationName="München" />
+        <LocationText locationName={cityLocations} />
       </section>
       <div className={styles.forecastCards}>
-        {forecastDays.map((forecastDay, key) => (
-          <ForecastCard
-            key={key}
-            day={forecastDay.day}
-            date={forecastDay.date}
-            icon={forecastDay.icon}
-            degree={forecastDay.degree}
-            description={forecastDay.description}
-          />
-        ))}
+        {weatherData !== null &&
+          weatherData.weatherData.map((data, key) => (
+            <ForecastCard
+              key={key}
+              day={getWeekdayString(data.date)}
+              date={data.date}
+              icon={data.icon}
+              degree={data.maxtemp}
+              description={data.description}
+            />
+          ))}
       </div>
       <Navbar LinkActive="search" />
     </div>
