@@ -27,7 +27,9 @@ export default function Forecast(): JSX.Element {
               day={getWeekdayString(data.date)}
               date={data.date}
               icon={data.icon}
-              degree={data.maxtemp}
+              maxDegree={data.maxtemp}
+              minDegree={data.mintemp}
+              avgDegree={data.avgtemp}
               description={data.description}
             />
           ))}
