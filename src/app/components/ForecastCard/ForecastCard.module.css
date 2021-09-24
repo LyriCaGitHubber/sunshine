@@ -19,10 +19,15 @@
   justify-content: space-evenly;
 }
 
-.weatherInfos {
+.tempSection {
   display: flex;
+  width: 100%;
   justify-content: space-around;
-  text-align: center;
+}
+
+.descriptionSection {
+  display: flex;
   align-items: center;
+  justify-content: space-around;
   width: 100%;
 }
