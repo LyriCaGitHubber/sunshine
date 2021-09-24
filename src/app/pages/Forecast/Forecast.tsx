@@ -10,8 +10,7 @@ import styles from './Forecast.module.css';
 
 export default function Forecast(): JSX.Element {
   const { cityLocations } = useLocationName();
-  const lastCityLocation = cityLocations[cityLocations.length - 1];
-  const weatherData = useForecast(lastCityLocation);
+  const weatherData = useForecast(cityLocations);
 
   return (
     <div className={styles.container}>
