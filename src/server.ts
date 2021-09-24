@@ -62,6 +62,7 @@ app.get('/api/weather/forecast', async (request, response) => {
           condition: { text: string; icon: string };
           maxtemp_c: number;
           mintemp_c: number;
+          avgtemp_c: number;
         };
       }) => {
         return {
@@ -70,6 +71,7 @@ app.get('/api/weather/forecast', async (request, response) => {
           icon: day.day.condition.icon,
           maxtemp: day.day.maxtemp_c,
           mintemp: day.day.mintemp_c,
+          avgtemp: day.day.avgtemp_c,
         };
       }
     );
