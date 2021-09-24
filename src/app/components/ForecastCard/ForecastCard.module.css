@@ -34,3 +34,9 @@
   padding: 0 0.5em;
   text-align: center;
 }
+
+.nightDegree,
+.dayDegree {
+  display: flex;
+  gap: 0.5em;
+}

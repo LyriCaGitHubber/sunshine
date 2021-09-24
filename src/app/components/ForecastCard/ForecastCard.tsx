@@ -26,10 +26,10 @@ export default function ForecastCard({
         <p>{date}</p>
       </article>
       <article className={styles.tempSection}>
-        <div>
+        <div className={styles.nightDegree}>
           <NightIcon /> <span>{minDegree}°</span>
         </div>
-        <div>
+        <div className={styles.dayDegree}>
           <DayIcon />
           <span> {maxDegree}°</span>
         </div>
