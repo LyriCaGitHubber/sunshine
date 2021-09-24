@@ -7,7 +7,7 @@ export default function useLocationName(): {
   const [cityLocations, setCityLocation] = useLocalStorage('location', '');
 
   function addCityLocation(cityLocation: string): void {
-    setCityLocation([cityLocation]);
+    setCityLocation(cityLocation);
   }
 
   return { cityLocations, addCityLocation };
