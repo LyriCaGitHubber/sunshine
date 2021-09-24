@@ -9,6 +9,7 @@ type ForeCastData = {
       icon: string;
       maxtemp: number;
       mintemp: number;
+      avgtemp: number;
     }
   ];
 };
