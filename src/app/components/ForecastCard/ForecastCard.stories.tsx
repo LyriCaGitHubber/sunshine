@@ -26,7 +26,8 @@ const getFormattedDate = () => {
 
 export const CardMonday = (): JSX.Element => (
   <ForecastCard
-    degree={25}
+    minDegree={30}
+    maxDegree={30}
     day={getWeekdayString('2021-09-23')}
     date={getFormattedDate()}
     icon="//cdn.weatherapi.com/weather/64x64/day/113.png"
