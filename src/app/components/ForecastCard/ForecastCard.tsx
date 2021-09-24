@@ -5,7 +5,9 @@ export type ForecastCardProps = {
   day: string | null;
   date: string;
   icon: string;
-  degree: number;
+  minDegree: number;
+  maxDegree: number;
+  avgDegree: number;
   description: string;
 };
 
@@ -13,7 +15,9 @@ export default function ForecastCard({
   day,
   date,
   icon,
-  degree,
+  minDegree,
+  maxDegree,
+  avgDegree,
   description,
 }: ForecastCardProps): JSX.Element {
   return (
@@ -22,8 +26,21 @@ export default function ForecastCard({
         <p>{day}</p>
         <p>{date}</p>
       </article>
-      <article className={styles.weatherInfos}>
-        <p>{degree}°</p>
+      <article className={styles.tempSection}>
+        <section>
+          <p>min:</p>
+          <p> {minDegree}°</p>
+        </section>
+        <section>
+          <p>max:</p>
+          <p> {maxDegree}°</p>
+        </section>
+        <section>
+          <p>durchschn:</p>
+          <p> {avgDegree}°</p>
+        </section>
+      </article>
+      <article className={styles.descriptionSection}>
         <img src={icon} alt={description} />
         <p>{description}</p>
       </article>
