@@ -11,7 +11,7 @@ export type ForecastCardProps = {
   maxDegree: number;
   description: string;
 };
-
+// Just for testing
 export default function ForecastCard({
   day,
   date,
