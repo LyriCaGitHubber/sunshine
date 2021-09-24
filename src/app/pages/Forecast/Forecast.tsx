@@ -7,11 +7,11 @@ import LocationText from '../../components/LocationText/LocationText';
 import Navbar from '../../components/Navbar/Navbar';
 import useLocationName from '../../hooks/useLocationName';
 import styles from './Forecast.module.css';
+import getDateStringFormat from '../../utils/getDateStringFormat';
 
 export default function Forecast(): JSX.Element {
   const { cityLocations } = useLocationName();
   const weatherData = useForecast(cityLocations);
-
   return (
     <div className={styles.container}>
       <section className={styles.topSection}>
@@ -24,11 +24,10 @@ export default function Forecast(): JSX.Element {
             <ForecastCard
               key={key}
               day={getWeekdayString(data.date)}
-              date={data.date}
+              date={getDateStringFormat(data.date)}
               icon={data.icon}
               maxDegree={data.maxtemp}
               minDegree={data.mintemp}
-              avgDegree={data.avgtemp}
               description={data.description}
             />
           ))}
