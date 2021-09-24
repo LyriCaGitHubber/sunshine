@@ -1,23 +1,22 @@
 import React from 'react';
+import NightIcon from '../../assets/NightIcon';
+import DayIcon from '../../assets/DayIcon';
 import styles from './ForecastCard.module.css';
 
 export type ForecastCardProps = {
   day: string | null;
   date: string;
-  icon: string;
+  icon?: string;
   minDegree: number;
   maxDegree: number;
-  avgDegree: number;
   description: string;
 };
 
 export default function ForecastCard({
   day,
   date,
-  icon,
   minDegree,
   maxDegree,
-  avgDegree,
   description,
 }: ForecastCardProps): JSX.Element {
   return (
@@ -27,21 +26,15 @@ export default function ForecastCard({
         <p>{date}</p>
       </article>
       <article className={styles.tempSection}>
-        <section>
-          <p>min:</p>
-          <p> {minDegree}°</p>
-        </section>
-        <section>
-          <p>max:</p>
-          <p> {maxDegree}°</p>
-        </section>
-        <section>
-          <p>durchschn:</p>
-          <p> {avgDegree}°</p>
-        </section>
+        <div>
+          <NightIcon /> <span>{minDegree}°</span>
+        </div>
+        <div>
+          <DayIcon />
+          <span> {maxDegree}°</span>
+        </div>
       </article>
       <article className={styles.descriptionSection}>
-        <img src={icon} alt={description} />
         <p>{description}</p>
       </article>
     </section>
