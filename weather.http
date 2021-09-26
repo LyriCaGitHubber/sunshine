@@ -1,3 +1,5 @@
+### Send Request for city name
+
 GET http://localhost:3001/api/geolocation?latitude=48.135125&longitude=11.581981
 Content-Type: application/json
 Authorization: {{$dotenv MAPQUEST_API_KEY}}
@@ -8,3 +10,4 @@ GET http://localhost:3001/api/weather/forecast?Karlsfeld
 Content-Type: application/json
 x-rapidapi-host: "weatherapi-com.p.rapidapi.com"
 Authorization: "ab19c0a896msheb3a462deb88ee5p106d0ajsn0dca9ec220f2"
+Authorization: {{$dotenv MAPQUEST_API_KEY}}
