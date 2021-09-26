@@ -22,6 +22,9 @@ function App(): JSX.Element {
         <Route path="/city">
           <AddCity />
         </Route>
+        <Route path="/cities">
+          <CityOverview />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
