@@ -55,6 +55,7 @@ app.get('/api/weather/forecast', async (request, response) => {
     const data = await forecast.json();
     const forecastData = data.forecast.forecastday;
     const cityLocation = data.location.name;
+    const region = data.location.region;
     const weatherData = forecastData.map(
       (day: {
         date: string;
@@ -76,7 +77,7 @@ app.get('/api/weather/forecast', async (request, response) => {
       }
     );
 
-    response.json({ weatherData, cityLocation });
+    response.json({ weatherData, cityLocation, region });
   } catch (error) {
     console.error(error);
     response.status(500).send();
