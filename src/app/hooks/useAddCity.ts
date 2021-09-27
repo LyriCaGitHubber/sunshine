@@ -5,7 +5,7 @@ export default function useAddCity(): {
   addCity: (cityName: string) => void;
   removeCity: (cityName: string) => void;
 } {
-  const [cities, setCities] = useLocalStorage('cities', []);
+  const [cities, setCities] = useLocalStorage<string[]>('cities', []);
 
   function addCity(cityName: string) {
     setCities([...cities, cityName]);
