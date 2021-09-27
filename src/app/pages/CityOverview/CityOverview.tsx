@@ -4,9 +4,19 @@ import useAddCity from '../../hooks/useAddCity';
 import Header from '../../components/Header/Header';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './CityOverview.module.css';
+import useLocationName from '../../hooks/useLocationName';
+import { useHistory } from 'react-router';
 
 export default function CityOverview(): JSX.Element {
   const { cities, removeCity } = useAddCity();
+  const history = useHistory();
+  const { addCityLocation } = useLocationName();
+
+  function handleWeatherClick(city: string) {
+    addCityLocation(city);
+    history.push('/forecast');
+  }
+
   return (
     <div className={styles.container}>
       <Header />
@@ -15,8 +25,8 @@ export default function CityOverview(): JSX.Element {
           <CityCard
             key={key}
             locationName={city}
-            region={city.region}
             onDeleteClick={() => removeCity(city)}
+            onWeatherClick={() => handleWeatherClick(city)}
           />
         ))}
         {cities.length === 0 && (
