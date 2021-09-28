@@ -40,47 +40,51 @@ app.get('/api/geolocation', async (request, response) => {
 
 app.get('/api/weather/forecast', async (request, response) => {
   const city = request.query.city;
-  try {
-    const forecast = await fetch(
-      `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=5&lang=de`,
-      {
-        headers: {
-          'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
-          'x-rapidapi-key': `${WEATHER_API_KEY}`,
-          'Content-type': 'application/json; charset=utf-8',
-        },
-      }
-    );
+  if (typeof city === 'string') {
+    const encodedCity = encodeURI(city);
+    try {
+      const forecast = await fetch(
+        `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${encodedCity}&days=5&lang=de`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+            'x-rapidapi-key': `${WEATHER_API_KEY}`,
+            'Content-type': 'application/json; charset="utf-8"',
+          },
+        }
+      );
 
-    const data = await forecast.json();
-    const forecastData = data.forecast.forecastday;
-    const cityLocation = data.location.name;
-    const region = data.location.region;
-    const weatherData = forecastData.map(
-      (day: {
-        date: string;
-        day: {
-          condition: { text: string; icon: string };
-          maxtemp_c: number;
-          mintemp_c: number;
-          avgtemp_c: number;
-        };
-      }) => {
-        return {
-          date: day.date,
-          description: day.day.condition.text,
-          icon: day.day.condition.icon,
-          maxtemp: day.day.maxtemp_c,
-          mintemp: day.day.mintemp_c,
-          avgtemp: day.day.avgtemp_c,
-        };
-      }
-    );
+      const data = await forecast.json();
+      const forecastData = data.forecast.forecastday;
+      const cityLocation = data.location.name;
+      const region = data.location.region;
+      const weatherData = forecastData.map(
+        (day: {
+          date: string;
+          day: {
+            condition: { text: string; icon: string };
+            maxtemp_c: number;
+            mintemp_c: number;
+            avgtemp_c: number;
+          };
+        }) => {
+          return {
+            date: day.date,
+            description: day.day.condition.text,
+            icon: day.day.condition.icon,
+            maxtemp: day.day.maxtemp_c,
+            mintemp: day.day.mintemp_c,
+            avgtemp: day.day.avgtemp_c,
+          };
+        }
+      );
 
-    response.json({ weatherData, cityLocation, region });
-  } catch (error) {
-    console.error(error);
-    response.status(500).send();
+      response.json({ weatherData, cityLocation, region });
+    } catch (error) {
+      console.error(error);
+      response.status(500).send();
+    }
   }
 });
 
