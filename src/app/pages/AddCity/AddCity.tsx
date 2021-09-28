@@ -8,13 +8,18 @@ import styles from './AddCity.module.css';
 
 export default function AddCity(): JSX.Element {
   const [addValue, setAddValue] = useState('');
+  const [errorMsg, setErrorMsg] = useState(false);
   const history = useHistory();
   const { addCity } = useAddCity();
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    addCity(addValue);
-    history.push('/cities');
+    if (addValue !== '') {
+      addCity(addValue);
+      history.push('/cities');
+    } else {
+      setErrorMsg(true);
+    }
   }
 
   return (
@@ -26,6 +31,9 @@ export default function AddCity(): JSX.Element {
         setLocationSearchValue={setAddValue}
         handleSubmit={handleSubmit}
       />
+      {errorMsg && (
+        <p className={styles.emptyErrorMessage}>Bitte Stadt eingeben</p>
+      )}
       <Navbar LinkActive="city" />
     </div>
   );
