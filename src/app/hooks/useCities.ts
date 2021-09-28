@@ -1,6 +1,6 @@
 import useLocalStorage from './useLocalStorage';
 
-export default function useAddCity(): {
+export default function useCities(): {
   cities: string[];
   addCity: (cityName: string) => void;
   removeCity: (cityName: string) => void;

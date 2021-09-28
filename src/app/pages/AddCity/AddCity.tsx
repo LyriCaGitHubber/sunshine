@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import useAddCity from '../../hooks/useAddCity';
+import useCities from '../../hooks/useCities';
 import Header from '../../components/Header/Header';
 import Navbar from '../../components/Navbar/Navbar';
 import SearchField from '../../components/SearchField/SearchField';
@@ -10,7 +10,7 @@ export default function AddCity(): JSX.Element {
   const [addValue, setAddValue] = useState('');
   const [errorMsg, setErrorMsg] = useState(false);
   const history = useHistory();
-  const { addCity } = useAddCity();
+  const { addCity } = useCities();
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
