@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CityCard from '../../components/CityCard/CityCard';
-import useAddCity from '../../hooks/useAddCity';
+import useCities from '../../hooks/useCities';
 import Header from '../../components/Header/Header';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './CityOverview.module.css';
 import useLocationName from '../../hooks/useLocationName';
 import { useHistory } from 'react-router';
+import ButtonLarge from '../../components/ButtonLarge/ButtonLarge';
 
 export default function CityOverview(): JSX.Element {
-  const { cities, removeCity } = useAddCity();
+  const { cities, removeCity } = useCities();
   const history = useHistory();
   const { addCityLocation } = useLocationName();
 
@@ -21,6 +23,9 @@ export default function CityOverview(): JSX.Element {
     <div className={styles.container}>
       <Header />
       <div className={styles.cityCards}>
+        <Link to="/city">
+          <ButtonLarge>Add</ButtonLarge>
+        </Link>
         {cities.map((city, key) => (
           <CityCard
             key={key}
@@ -33,6 +38,7 @@ export default function CityOverview(): JSX.Element {
           <p className={styles.noCities}>Keine Städte zu finden</p>
         )}
       </div>
+
       <Navbar LinkActive="city" />
     </div>
   );
