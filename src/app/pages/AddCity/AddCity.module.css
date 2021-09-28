@@ -1,5 +1,12 @@
 .container {
   display: grid;
   height: 100vh;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 0;
+}
+
+.emptyErrorMessage {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--clr-error-Msg);
+  font-weight: 600;
 }
