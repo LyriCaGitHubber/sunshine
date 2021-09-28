@@ -14,6 +14,6 @@
 
 .noCities {
   text-align: center;
-  color: var(--clr-text-primary);
+  color: var(--clr-text-secondary);
   font-size: var(--font-size-content);
 }
