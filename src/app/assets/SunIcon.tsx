@@ -1,10 +1,12 @@
 import React from 'react';
+import styles from './sunIcon.module.css';
 
 export default function SunIcon(
   props: React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
     <svg
+      className={styles.iconRotation}
       width="42"
       height="42"
       viewBox="0 0 42 42"

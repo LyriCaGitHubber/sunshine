@@ -10,6 +10,43 @@
   padding: 0.3em 0;
   border-radius: 10px;
   max-height: 6.3em;
+  animation: fadeInCityCards linear 700ms;
+}
+
+@keyframes fadeInCityCards {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInCityCards {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInCityCards {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInCityCards {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .buttonArea {

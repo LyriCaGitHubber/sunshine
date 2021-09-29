@@ -23,7 +23,7 @@ export default function Navbar({ LinkActive }: NavbarProps): JSX.Element {
       <Link to="/">
         <HomeIcon {...(LinkActive === 'home' ? active : inactive)} />
       </Link>
-      <Link to="/city">
+      <Link to="/cities">
         <CityIcon {...(LinkActive === 'city' ? active : inactive)} />
       </Link>
       <Link to="/search">

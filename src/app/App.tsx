@@ -16,11 +16,11 @@ function App(): JSX.Element {
         <Route path="/forecast">
           <Forecast />
         </Route>
-        <Route path="/overview">
-          <CityOverview />
-        </Route>
         <Route path="/city">
           <AddCity />
+        </Route>
+        <Route path="/cities">
+          <CityOverview />
         </Route>
         <Route path="/">
           <Home />

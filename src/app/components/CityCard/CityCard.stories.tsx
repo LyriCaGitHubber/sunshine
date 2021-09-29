@@ -7,5 +7,9 @@ export default {
 };
 
 export const CardCity = (): JSX.Element => (
-  <CityCard locationName="München" region="Bayern" />
+  <CityCard
+    locationName="München"
+    onWeatherClick={() => console.log('Klick')}
+    onDeleteClick={() => console.log('Klick')}
+  />
 );

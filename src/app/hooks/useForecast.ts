@@ -2,6 +2,7 @@ import useFetch from './useFetch';
 
 type ForeCastData = {
   cityLocation: string;
+  region: string;
   weatherData: [
     {
       date: string;
