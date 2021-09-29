@@ -11,7 +11,7 @@
   justify-content: center;
   padding: 1em 0;
   gap: 1em;
-  animation: fadeInForecastCards 1s linear;
+  animation: fadeInForecastCards 700ms linear;
 }
 
 @keyframes fadeInForecastCards {

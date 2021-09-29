@@ -11,7 +11,7 @@
   height: fit-content;
   padding: 0.6em 0 0.6em 0;
   gap: 0.3em;
-  animation: fadeInLocationCard linear 2s;
+  animation: fadeInLocationCard linear 700ms;
 }
 
 @keyframes fadeInLocationCard {

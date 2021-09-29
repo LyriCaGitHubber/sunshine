@@ -10,7 +10,7 @@
   padding: 0.3em 0;
   border-radius: 10px;
   max-height: 6.3em;
-  animation: fadeInCityCards linear 1s;
+  animation: fadeInCityCards linear 700ms;
 }
 
 @keyframes fadeInCityCards {
