@@ -77,3 +77,8 @@
   display: flex;
   gap: 0.5em;
 }
+
+.nightDegree,
+.dayDegree span {
+  align-self: end;
+}
