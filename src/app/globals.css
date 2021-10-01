@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'PT Sans', sans-serif;
+  src: url('./assets/font/PTSans-Regular.ttf') format('ttf');
   font-weight: 400;
 }
 
